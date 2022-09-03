@@ -32,4 +32,9 @@ public class DespesaController {
     public ResponseEntity<?> deleta(@RequestParam Long id){
         return new ResponseEntity<>(service.deletaDespesa(id), HttpStatus.OK);
     }
+
+    @GetMapping("/soma")
+    public ResponseEntity<?> soma(){
+        return new ResponseEntity<>(service.somaDespesa(), HttpStatus.OK);
+    }
 }

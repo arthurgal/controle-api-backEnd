@@ -5,6 +5,8 @@ import br.com.api.controle.model.Despesa;
 import br.com.api.controle.repository.DespesaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DespesaService {
 
@@ -37,6 +39,14 @@ public class DespesaService {
             var despesaById = repository.findById(id);
             repository.deleteById(despesaById.get().getId());
             return "Emprestimo com id: " + id + " Deletado";
+        }catch (Exception e){
+            throw new ControleException("NÃO ENCONTRADO OU VALORES NÃO VÁLIDO");
+        }
+    }
+
+    public Long somaDespesa(){
+        try {
+            return repository.somaTotal();
         }catch (Exception e){
             throw new ControleException("NÃO ENCONTRADO OU VALORES NÃO VÁLIDO");
         }
