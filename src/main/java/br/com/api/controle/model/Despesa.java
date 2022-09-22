@@ -27,5 +27,5 @@ public class Despesa {
     private String observacao;
 
     @Column(name = "valor", nullable = false)
-    private Long valor;
+    private Float valor;
 }
