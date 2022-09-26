@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface DespesaRepository extends CrudRepository<Despesa, Long> {
 
     @Query(value = "SELECT sum(valor) FROM controle.despesa", nativeQuery = true)
-    long somaTotal ();
+    Double somaTotal ();
 }

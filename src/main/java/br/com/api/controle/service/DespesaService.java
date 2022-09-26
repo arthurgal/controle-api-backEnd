@@ -44,11 +44,11 @@ public class DespesaService {
         }
     }
 
-    public Long somaDespesa(){
+    public Double somaDespesa(){
         try {
             return repository.somaTotal();
         }catch (Exception e){
-            throw new ControleException("NÃO ENCONTRADO OU VALORES NÃO VÁLIDO");
+            return 0.0;
         }
     }
 
