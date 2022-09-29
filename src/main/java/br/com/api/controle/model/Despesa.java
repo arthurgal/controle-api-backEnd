@@ -28,4 +28,7 @@ public class Despesa {
 
     @Column(name = "valor", nullable = false)
     private Float valor;
+
+    @Column(name = "tipoDespesa", nullable = false)
+    private String tipoDespesa;
 }
