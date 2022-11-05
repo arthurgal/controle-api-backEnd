@@ -35,6 +35,6 @@ public class DespesaController {
 
     @GetMapping("/soma")
     public ResponseEntity<?> soma(){
-        return new ResponseEntity<>(service.somaDespesa(), HttpStatus.OK);
+        return new ResponseEntity<>(service.calculoSomaDasDespesas(), HttpStatus.OK);
     }
 }

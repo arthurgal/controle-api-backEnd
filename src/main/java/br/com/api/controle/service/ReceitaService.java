@@ -22,11 +22,16 @@ public class ReceitaService {
         }
     }
 
-    public Double somaReceita(){
-        try {
-            return repository.somaTotal();
+    public Double somaReceitas(){
+        double soma = 0;
+        try{
+            var pegaTodasReceitas = repository.findAll();
+            for (Receita receita : pegaTodasReceitas){
+                soma += receita.getValor();
+            }
+            return soma;
         }catch (Exception e){
-            return 0.0;
+            throw new ControleException("Não foi possivel achar uma soma");
         }
     }
 

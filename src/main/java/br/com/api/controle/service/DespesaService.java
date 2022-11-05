@@ -44,12 +44,17 @@ public class DespesaService {
         }
     }
 
-    public Double somaDespesa(){
-        try {
-            return repository.somaTotal();
+    public Double calculoSomaDasDespesas(){
+        double total = 0;
+       try{
+            var listagem = repository.findAll();
+            for(Despesa despesa : listagem){
+               total += despesa.getValor();
+            }
+            return total;
         }catch (Exception e){
-            return 0.0;
-        }
+           throw new ControleException("NÃO ENCONTRADO OU VALORES NÃO VÁLIDO");
+       }
     }
 
 }

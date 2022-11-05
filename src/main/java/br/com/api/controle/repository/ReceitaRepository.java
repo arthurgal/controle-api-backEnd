@@ -8,7 +8,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ReceitaRepository extends CrudRepository<Receita, Long> {
-
-    @Query(value = "SELECT sum(valor) FROM controle.receita", nativeQuery = true)
-    Double somaTotal ();
 }

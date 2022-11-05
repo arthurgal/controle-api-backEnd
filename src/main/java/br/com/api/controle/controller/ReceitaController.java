@@ -27,6 +27,6 @@ public class ReceitaController {
 
     @GetMapping("/soma")
     public ResponseEntity<?> soma (){
-        return  new ResponseEntity<>(service.somaReceita(), HttpStatus.CREATED);
+        return  new ResponseEntity<>(service.somaReceitas(), HttpStatus.CREATED);
     }
 }
